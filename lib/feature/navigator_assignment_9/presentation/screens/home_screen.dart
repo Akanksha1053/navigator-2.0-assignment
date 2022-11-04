@@ -1,12 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:navigator_assignment_9/router/page_configuration.dart';
-import 'package:navigator_assignment_9/router/router_delegate.dart';
-import 'package:provider/provider.dart';
 
+import '../../../../core/auto_route/auto_router.gr.dart';
 import '../../../../core/constants/color_constants.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({
+  const HomeScreen({
     super.key,
   });
 
@@ -28,8 +27,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           ElevatedButton(
             onPressed: () {
-              Provider.of<PageNavigationRouterDelegate>(context, listen: false)
-                  .setNewRoutePath(cartPageConfig);
+              AutoRouter.of(context).push(CartScreenRoute());
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
@@ -38,8 +36,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Provider.of<PageNavigationRouterDelegate>(context, listen: false)
-                  .setNewRoutePath(profilePageConfig);
+              AutoRouter.of(context).push(const ProfileScreenRoute());
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
@@ -48,8 +45,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Provider.of<PageNavigationRouterDelegate>(context, listen: false)
-                  .setNewRoutePath(checkoutPageConfig);
+              AutoRouter.of(context).push(const CheckoutScreenRoute());
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
