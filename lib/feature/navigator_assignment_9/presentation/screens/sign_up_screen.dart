@@ -8,14 +8,14 @@ import '../../../../core/constants/text_constants.dart';
 import '../../../../core/constants/textstyle_constants.dart';
 import '../widgets/credential_form_field.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -38,10 +38,6 @@ class _LogInScreenState extends State<LogInScreen> {
     return Scaffold(
       backgroundColor: ColorConstants.scaffoldBackgroundColor,
       appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: Colors.black, //change your color here
-        ),
-        automaticallyImplyLeading: true,
         backgroundColor: ColorConstants.appbarBackgroundColor,
         elevation: 0,
       ),
@@ -57,7 +53,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 children: <Widget>[
                   const SizedBox(height: 10),
                   const Text(
-                    TextConstants.logInYourAccountText,
+                    TextConstants.createAccountText,
                     style: TextStyleConstants.createAccountTextStyle,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 20),
@@ -86,20 +82,39 @@ class _LogInScreenState extends State<LogInScreen> {
                           if (_saveForm()) {
                             try {
                               FirebaseAuth auth = FirebaseAuth.instance;
-                              await auth.signInWithEmailAndPassword(
+                              await auth.createUserWithEmailAndPassword(
                                   email: _emailController.text,
                                   password: _passwordController.text);
                               AutoRouter.of(context)
-                                  .push(const HomeScreenRoute());
+                                  .push(const LogInScreenRoute());
                             } on FirebaseAuthException catch (e) {
+                              print('Failed with error code: ${e.code}');
+                              print(e.message);
                               _emailController.clear();
                               _passwordController.clear();
                             }
                           }
                         },
-                        child: const Text(TextConstants.signInText,
+                        child: const Text(TextConstants.signUpText,
                             style: TextStyleConstants.signUpTextStyle)),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(TextConstants.alreadyHaveAnAccountText,
+                          style:
+                              TextStyleConstants.alreadyHaveAnAccountTextStyle),
+                      TextButton(
+                          onPressed: () {
+                            AutoRouter.of(context)
+                                .push(const LogInScreenRoute());
+                          },
+                          child: const Text(
+                            TextConstants.signinButtonText,
+                            style: TextStyleConstants.signInTextStyle,
+                          ))
+                    ],
+                  )
                 ]),
           ),
         ),

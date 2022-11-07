@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           ElevatedButton(
             onPressed: () {
-              AutoRouter.of(context).push(CartScreenRoute());
+              AutoRouter.of(context).push(const CartScreenRoute());
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(

@@ -9,4 +9,6 @@ class TextConstants {
   static const String homePageScreenText = 'HomePage';
   static const String checkoutScreenText = 'Checkout Page';
   static const String cartScreenText = 'Cart Page';
+  static const String signInText = 'Sign In';
+  static const String logInYourAccountText = 'Log In';
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "55577073376",
+    "firebase_url": "https://navigation-2-a3783-default-rtdb.firebaseio.com",
+    "project_id": "navigation-2-a3783",
+    "storage_bucket": "navigation-2-a3783.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55577073376:android:b38badc7a4e21da3682285",
+        "android_client_info": {
+          "package_name": "com.example.navigator_assignment_9"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55577073376-ei8i9a512f92qunq6qe7df7btv34copk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2N7RBf4B6Vwh_WsJzEzVE86fumtqWNYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55577073376-ei8i9a512f92qunq6qe7df7btv34copk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
