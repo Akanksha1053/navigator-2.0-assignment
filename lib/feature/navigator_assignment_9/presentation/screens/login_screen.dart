@@ -92,6 +92,13 @@ class _LogInScreenState extends State<LogInScreen> {
                               AutoRouter.of(context)
                                   .push(const HomeScreenRoute());
                             } on FirebaseAuthException catch (e) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    'User not found',
+                                  ),
+                                ),
+                              );
                               _emailController.clear();
                               _passwordController.clear();
                             }

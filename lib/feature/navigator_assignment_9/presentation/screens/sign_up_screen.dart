@@ -88,8 +88,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               AutoRouter.of(context)
                                   .push(const LogInScreenRoute());
                             } on FirebaseAuthException catch (e) {
-                              print('Failed with error code: ${e.code}');
-                              print(e.message);
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(const SnackBar(
+                                content: Text(
+                                  'Email already exists.',
+                                ),
+                              ));
                               _emailController.clear();
                               _passwordController.clear();
                             }
