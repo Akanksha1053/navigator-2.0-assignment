@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/color_constants.dart';
 
 class CredentialFormField extends StatefulWidget {
-  CredentialFormField({
-    super.key,
-    required this.iconLeading,
-    this.suffixIcon,
-    required this.label,
-  });
+  CredentialFormField(
+      {super.key,
+      required this.iconLeading,
+      this.suffixIcon,
+      required this.label,
+      required this.controller});
   final IconData iconLeading;
   IconData? suffixIcon;
   final String label;
+  final TextEditingController controller;
 
   @override
   State<CredentialFormField> createState() => _CredentialFormFieldState();
@@ -32,6 +33,7 @@ class _CredentialFormFieldState extends State<CredentialFormField> {
             labelText: widget.label,
             suffixIcon: Icon(widget.suffixIcon),
             border: InputBorder.none),
+        controller: widget.controller,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Please provide ${widget.label}.';

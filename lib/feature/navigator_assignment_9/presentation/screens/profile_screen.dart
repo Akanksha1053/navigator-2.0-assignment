@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:navigator_assignment_9/core/constants/text_constants.dart';
 import 'package:navigator_assignment_9/core/constants/textstyle_constants.dart';
 

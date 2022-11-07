@@ -15,4 +15,8 @@ class TextStyleConstants {
       fontSize: 20,
       fontWeight: FontWeight.w500,
       color: ColorConstants.signUpTextColor);
+  static const alreadyHaveAnAccountTextStyle = TextStyle(
+      fontSize: 15, color: ColorConstants.alreadyHaveAnAccountTextColor);
+  static const signInTextStyle =
+      TextStyle(fontSize: 15, color: ColorConstants.green);
 }

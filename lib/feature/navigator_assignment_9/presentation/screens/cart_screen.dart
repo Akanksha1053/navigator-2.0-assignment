@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:navigator_assignment_9/core/constants/color_constants.dart';
 
 import '../../../../core/constants/text_constants.dart';
 import '../../../../core/constants/textstyle_constants.dart';
 
 class CartScreen extends StatelessWidget {
-  CartScreen({super.key});
+  const CartScreen({super.key});
   static const valueKey = ValueKey('CartScreen');
 
   @override

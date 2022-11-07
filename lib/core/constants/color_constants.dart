@@ -7,8 +7,9 @@ class ColorConstants {
   static const Color appbarIconColor = Colors.black87;
   static const Color createAccountTextColor = Colors.black;
   static const Color loginCredentialContainerColor = Color(0xFFFAFAFA);
-  static const Color checkBoxBorderColor = Color(0xFF02B763);
+  static const Color green = Color(0xFF02B763);
   static const Color rememberMeTextColor = Colors.black;
   static const Color signUpTextColor = Colors.white;
   static const Color signUpButtonColor = Color(0xFF109C5B);
+  static const Color alreadyHaveAnAccountTextColor = Color(0xFFA8A8A8);
 }
